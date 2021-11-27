@@ -1,0 +1,403 @@
+Mongodb Zen Class Database:
+
+Collections - Users :
+
+[
+  {
+    "name": "Ajay",
+    "batch": "b22",
+    "month": "October",
+    "topics": [
+      "html",
+      "css",
+      "javascript"
+    ],
+    "tasks": [
+      "css",
+      "javascript"
+    ],
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  },
+  {
+    "name": "Naren",
+    "batch": "b23",
+    "month": "October",
+    "topics": [
+      "html",
+      "css",
+      "mongodb"
+    ],
+    "tasks": [
+      "html",
+      "javascript"
+    ],
+    "placement": "not attended"
+  },
+  {
+    "name": "Vikram",
+    "batch": "b18",
+    "month": "September",
+    "topics": [
+      "mongodb",
+      "mysql",
+      "javascript"
+    ],
+    "tasks": [
+      "mysql",
+      "javascript"
+    ],
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  },
+  {
+    "name": "Karthik",
+    "batch": "b23",
+    "month": "October",
+    "topics": [
+      "html",
+      "css"
+    ],
+    "tasks": [
+      "css",
+      "html"
+    ],
+    "placement": "notattended"
+  },
+  {
+    "name": "Gokul",
+    "batch": "b21",
+    "month": "October",
+    "topics": [
+      "react",
+      "nodejs",
+      "javascript"
+    ],
+    "tasks": [
+      "nodejs",
+      "javascript"
+    ],
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  },
+  {
+    "name": "Suriya",
+    "batch": "b19",
+    "month": "September",
+    "topics": [
+      "react",
+      "javascript"
+    ],
+    "tasks": [
+      "react",
+      "javascript"
+    ],
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  }
+]
+--------------------------------------------------------
+Queries:
+
+11.Find Topics and Tasks taught in the month of October :
+
+db.users.find({month:"October"},{topics:1,tasks:1}).pretty()
+
+13.Find all the company drives and students who are appeared for the placement :
+
+db.users.find({
+  "placement": {
+    "$nin": [
+      "notattended"
+    ]
+  }
+})
+
+--------------------------------------------------------------
+
+Update New Value : Codekata
+
+db.users.updateMany({ },{$set :{"codekate": { "section": ["InputOutput", "Array","Javascript","Beginnerproblems"],"solved": 53,"status":"solved"}}})
+
+[
+  {
+    "name": "Ajay",
+    "batch": "b22",
+    "month": "October",
+    "topics": [
+      "html",
+      "css",
+      "javascript"
+    ],
+    "tasks": [
+      "css",
+      "javascript"
+    ],
+    "codekate": {
+      "section": [
+        "InputOutput",
+        "Array",
+        "Javascript",
+        "Beginnerproblems"
+      ],
+      "solved": 40,
+      "status":"solved"
+    },
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  },
+  {
+    "name": "Naren",
+    "batch": "b23",
+    "month": "October",
+    "topics": [
+      "html",
+      "css",
+      "mongodb"
+    ],
+    "tasks": [
+      "html",
+      "javascript"
+    ],
+    "codekate": {
+      "section": [
+        "InputOutput",
+        "Array",
+        "Javascript",
+        "Beginnerproblems"
+      ],
+      "solved": 40,
+      "status":"solved"
+    },
+    "placement": "not attended"
+  },
+  {
+    "name": "Vikram",
+    "batch": "b18",
+    "month": "September",
+    "topics": [
+      "mongodb",
+      "mysql",
+      "javascript"
+    ],
+    "tasks": [
+      "mysql",
+      "javascript"
+    ],
+    "codekate": {
+      "section": [
+        "InputOutput",
+        "Array",
+        "Javascript",
+        "Beginnerproblems"
+      ],
+      "solved": 35,
+      "status":"solved"
+    },
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  },
+  {
+    "name": "Karthik",
+    "batch": "b23",
+    "month": "October",
+    "topics": [
+      "html",
+      "css"
+    ],
+    "tasks": [
+      "css",
+      "html"
+    ],
+    "codekate": {
+      "section": [
+        "InputOutput",
+        "Array",
+        "Javascript",
+        "Beginnerproblems"
+      ],
+      "solved": 45,
+      "status":"solved"
+    },
+    "placement": "notattended"
+  },
+  {
+    "name": "Gokul",
+    "batch": "b21",
+    "month": "October",
+    "topics": [
+      "react",
+      "nodejs",
+      "javascript"
+    ],
+    "tasks": [
+      "nodejs",
+      "javascript"
+    ],
+    "codekate": {
+      "section": [
+        "InputOutput",
+        "Array",
+        "Javascript",
+        "Beginnerproblems"
+      ],
+      "solved": 53,
+      "status":"solved"
+    },
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  },
+  {
+    "name": "Suriya",
+    "batch": "b19",
+    "month": "September",
+    "topics": [
+      "react",
+      "javascript"
+    ],
+    "tasks": [
+      "react",
+      "javascript"
+    ],
+    "codekate": {
+      "section": [
+        "InputOutput",
+        "Array",
+        "Javascript",
+        "Beginnerproblems"
+      ],
+      "solved": 55,
+      "status":"solved"
+    },
+    "placement": {
+      "company": [
+        "CTS",
+        "TCS",
+        "INFOSYS"
+      ]
+    }
+  }
+]
+
+-----------------------------------------------------------------------------
+Queries :
+
+14.Find the number of problems solved by the user in codekata :
+
+db.users.aggregate([{$group:{_id:"$codekate.status",total:{$sum:"$codekate.solved"}}}])
+
+---------------------------------------------------------------------------
+Collection name - Mentor :
+
+[
+  {
+    "mentorname": "Raghav",
+    "topics": [
+      "react",
+      "mongodb",
+      "nodejs"
+    ],
+    "mentees": 30
+  },
+  {
+    "mentorname": "Vijay",
+    "topics": [
+      "react",
+      "html",
+      "js"
+    ],
+    "mentees": 14
+  },
+  {
+    "mentorname": "Raj",
+    "topics": [
+      "html",
+      "css",
+      "js"
+    ],
+    "mentees": 10
+  },
+  {
+    "mentorname": "Ramesh",
+    "topics": [
+      "react"
+    ],
+    "mentees": 13
+  },
+  {
+    "mentorname": "Sridhar",
+    "topics": [
+      "react",
+      "mongodb",
+      "nodejs"
+    ],
+    "mentees": 25
+  },
+  {
+    "mentorname": "Ganesh",
+    "topics": [
+      "react",
+      "mongodb",
+      "nodejs"
+    ],
+    "mentees": 12
+  },
+  {
+    "mentorname": "Shiva",
+    "topics": [
+      "react",
+      "mongodb"
+    ],
+    "mentees": 23
+  }
+]
+
+----------------------------------------------------------------------
+Queries :
+
+15.Find all the mentors with who has the mentee's count more than 15 :
+
+db.mentor.find({"mentees":{$gt:15}}).pretty()
+
+
+
+
+
+
+
+
